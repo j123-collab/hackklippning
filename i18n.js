@@ -14,7 +14,6 @@ var I18N = {
 
     // Hero
     heroSubtitle: 'Trädgård & Gärdsgårds Entreprenad',
-    heroTagline: 'ett företag. två branscher. inga konstigheter.',
     heroCta1: 'Våra tjänster',
     heroCta2: 'Kontakta oss',
 
@@ -174,9 +173,6 @@ var I18N = {
     formErrorRequired: 'Detta fält är obligatoriskt',
     formErrorEmail: 'Ange en giltig e-postadress',
 
-    // Footer
-    footerTagline: 'ett företag. två branscher. inga konstigheter.',
-
     // Map regions
     mapJamtland: 'Gärdsgård (byggnation & renovering), Skogsröjning',
     mapUppsala: 'Häckar, Buskar & Fruktträd, Gärdsgård',
@@ -196,7 +192,6 @@ var I18N = {
 
     // Hero
     heroSubtitle: 'Garden & Traditional Fence Contractor',
-    heroTagline: 'one company. two trades. no fuss.',
     heroCta1: 'Our services',
     heroCta2: 'Contact us',
 
@@ -355,9 +350,6 @@ var I18N = {
     formSuccess: 'Thank you for your enquiry! We will get back to you as soon as possible.',
     formErrorRequired: 'This field is required',
     formErrorEmail: 'Please enter a valid email address',
-
-    // Footer
-    footerTagline: 'one company. two trades. no fuss.',
 
     // Map regions
     mapJamtland: 'Gärdsgård (build & renovation), Forest clearing',

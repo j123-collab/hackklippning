@@ -1660,6 +1660,20 @@ ul {
 }
 
 /* ==================== REDUCED MOTION ==================== */
+/* ==================== RESPONSIVE — SMALL PHONES ==================== */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid,
+  .gallery-grid--large {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
