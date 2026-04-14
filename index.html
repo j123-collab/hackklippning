@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L. Falk Trädgård & Gärdsgårds Entreprenad — Klippning och beskärning av häckar, buskar och fruktträd. Byggnation av klassisk gärdsgård. Verksamma i Stockholm, Mälardalen och Jämtland.">
+  <meta property="og:title" content="L. Falk — Trädgård & Gärdsgård">
+  <meta property="og:description" content="Klippning av häckar, beskärning av fruktträd och byggnation av klassisk gärdsgård sedan 1970-talet.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <title>L. Falk — Trädgård & Gärdsgårds Entreprenad</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232d5016'/><text x='16' y='20' text-anchor='middle' font-size='12' font-weight='bold' fill='white' font-family='serif'>LF</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#tjanster" class="skip-link">Hoppa till innehåll</a>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hem" class="nav-logo" aria-label="Till startsidan">
+        <svg class="nav-logo-icon" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <!-- Fence posts (stör) -->
+          <line x1="10" y1="10" x2="10" y2="27" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="15" y1="8" x2="15" y2="27" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="20" y1="9" x2="20" y2="27" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="25" y1="8" x2="25" y2="27" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="30" y1="10" x2="30" y2="27" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Rails (slana) -->
+          <line x1="8" y1="14" x2="32" y2="12" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="32" y2="16" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="8" y1="22" x2="32" y2="20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <!-- Ground line -->
+          <path d="M6 28 Q20 25 34 28" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-logo-text">L.Falk</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#hem" class="nav-link active" data-i18n="navHome">Hem</a>
+        <a href="#tjanster" class="nav-link" data-i18n="navServices">Tjänster</a>
+        <a href="#gardsgard" class="nav-link" data-i18n="navFence">Gärdsgård</a>
+        <a href="#om-oss" class="nav-link" data-i18n="navAbout">Om oss</a>
+        <a href="#kontakt" class="nav-link" data-i18n="navContact">Kontakt</a>
+      </div>
+
+      <div class="nav-right">
+      <a href="tel:+46702605690" class="nav-phone" aria-label="Ring oss: 070-260 56 90">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <span>070 – 260 56 90</span>
+      </a>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Meny" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <header class="hero" id="hem">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">L. Falk</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">Trädgård & Gärdsgårds Entreprenad</p>
+      <p class="hero-tagline" data-i18n="heroTagline">ett företag. två branscher. inga konstigheter.</p>
+      <div class="hero-buttons">
+        <a href="#tjanster" class="btn btn-primary" data-i18n="heroCta1">Våra tjänster</a>
+        <a href="#kontakt" class="btn btn-outline" data-i18n="heroCta2">Kontakta oss</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== SERVICES OVERVIEW ==================== -->
+    <section class="section section--pale" id="tjanster">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="servicesTitle">Våra Tjänster</h2>
+        <p class="section-intro reveal" data-i18n="servicesIntro">Vi erbjuder professionella trädgårds- och entreprenadtjänster i Stockholm, Mälardalen och Jämtland.</p>
+
+        <div class="services-grid">
+          <!-- Card 1: Hedges -->
+          <a href="#klippning" class="service-card reveal">
+            <div class="service-card-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 36 L24 36 L24 16 C24 16 22 8 16 8 C10 8 6 14 6 20 Z"/>
+                <path d="M24 36 L42 36 L42 20 C42 14 38 8 32 8 C26 8 24 16 24 16 Z"/>
+                <line x1="24" y1="36" x2="24" y2="42"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title" data-i18n="card1Title">Häckar, Buskar & Fruktträd</h3>
+            <p class="service-card-desc" data-i18n="card1Desc">Klippning och beskärning av barr- och lövhäckar, fruktträd, formklippning och nyplantering.</p>
+            <span class="service-card-link" data-i18n="readMore">Läs mer &rarr;</span>
+          </a>
+
+          <!-- Card 2: Fence -->
+          <a href="#gardsgard" class="service-card reveal">
+            <div class="service-card-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="8" x2="8" y2="40"/>
+                <line x1="18" y1="6" x2="18" y2="40"/>
+                <line x1="28" y1="6" x2="28" y2="40"/>
+                <line x1="38" y1="8" x2="38" y2="40"/>
+                <line x1="5" y1="16" x2="42" y2="14"/>
+                <line x1="5" y1="24" x2="42" y2="22"/>
+                <line x1="5" y1="32" x2="42" y2="30"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title" data-i18n="card2Title">Klassisk Gärdsgård</h3>
+            <p class="service-card-desc" data-i18n="card2Desc">Byggnation och renovering av traditionell Jämtgård i senvuxen gran enligt hundraårig tradition.</p>
+            <span class="service-card-link" data-i18n="readMore">Läs mer &rarr;</span>
+          </a>
+
+          <!-- Card 3: Lawn -->
+          <a href="#ovriga-tjanster" class="service-card reveal">
+            <div class="service-card-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 40 C4 40 8 20 16 20 C20 20 20 28 24 28 C28 28 28 12 32 12 C36 12 44 40 44 40"/>
+                <line x1="2" y1="40" x2="46" y2="40"/>
+                <path d="M16 40 L16 34" stroke-width="2"/>
+                <path d="M22 40 L22 32" stroke-width="2"/>
+                <path d="M28 40 L28 35" stroke-width="2"/>
+                <path d="M34 40 L34 33" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title" data-i18n="card3Title">Anläggning av gräsmatta</h3>
+            <p class="service-card-desc" data-i18n="card3Desc">Markberedning och utläggning av färdiga gräsmattor för ett perfekt resultat.</p>
+            <span class="service-card-link" data-i18n="readMore">Läs mer &rarr;</span>
+          </a>
+
+          <!-- Card 4: Forest -->
+          <a href="#ovriga-tjanster" class="service-card reveal">
+            <div class="service-card-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 4 L14 18 L18 18 L10 30 L16 30 L8 42 L40 42 L32 30 L38 30 L30 18 L34 18 Z"/>
+                <line x1="24" y1="42" x2="24" y2="46"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title" data-i18n="card4Title">Skogsröjning</h3>
+            <p class="service-card-desc" data-i18n="card4Desc">Certifierad skogsröjning med "grönt körkort". Traktplanering, arbetsstråk och hyggesrensning.</p>
+            <span class="service-card-link" data-i18n="readMore">Läs mer &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEASONAL GUIDE ==================== -->
+    <section class="section" id="sasong">
+      <div class="container container--narrow">
+        <h2 class="section-title reveal" style="text-align:center;" data-i18n="seasonTitle">När gör vi vad?</h2>
+        <p class="section-intro reveal" data-i18n="seasonIntro">Rätt åtgärd vid rätt tidpunkt ger bästa resultat. Välj årstid för att se våra rekommendationer.</p>
+
+        <div class="season-tabs reveal">
+          <button class="season-tab active" data-season="spring">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 22V8"/><path d="M8 12c-2-1-4 0-5 2"/><path d="M16 12c2-1 4 0 5 2"/><path d="M9 8c-1-2 0-4 2-5"/><path d="M15 8c1-2 0-4-2-5"/><circle cx="12" cy="5" r="2"/></svg>
+            Vår
+          </button>
+          <button class="season-tab" data-season="summer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>
+            Sommar
+          </button>
+          <button class="season-tab" data-season="autumn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 22V14"/><path d="M6 8c0-3.3 2.7-6 6-6s6 2.7 6 6c0 4-3 6-6 8-3-2-6-4-6-8z"/><path d="M12 10l-2 2"/></svg>
+            Höst
+          </button>
+          <button class="season-tab" data-season="winter">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M6 6l12 12"/><path d="M18 6L6 18"/><path d="M12 5l-2 2 2 2 2-2z"/><path d="M12 17l-2 2 2 2 2-2z"/></svg>
+            Vinter
+          </button>
+        </div>
+
+        <div class="season-panels">
+          <div class="season-panel active" data-season="spring">
+            <div class="season-panel-inner">
+              <div class="season-months" data-i18n="springMonths">Mars – Maj</div>
+              <div class="season-items">
+                <div class="season-item">
+                  <span class="season-item-badge">Häckar</span>
+                  <h4>Nyplantering av häckar</h4>
+                  <p>Bästa tiden att plantera nya häckar medan marken är fuktig och temperaturerna milda.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--green">Gräsmatta</span>
+                  <h4>Anläggning av gräsmatta</h4>
+                  <p>Idealisk tid för markberedning och utrullning av färdig gräsmatta.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--brown">Gärdsgård</span>
+                  <h4>Planering och offert</h4>
+                  <p>Boka in sommarprojekt — vi hjälper med planering och materialbeställning.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="season-panel" data-season="summer">
+            <div class="season-panel-inner">
+              <div class="season-months" data-i18n="summerMonths">Juni – Augusti</div>
+              <div class="season-items">
+                <div class="season-item">
+                  <span class="season-item-badge">Häckar</span>
+                  <h4>Klippning och formklippning</h4>
+                  <p>Högsäsong för häckklippning. Lövhäckar och barrhäckar klipps i form.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--brown">Gärdsgård</span>
+                  <h4>Byggnation och renovering</h4>
+                  <p>Bästa tiden att bygga och renovera gärdsgård — lång arbetsdag och torr mark.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--forest">Skog</span>
+                  <h4>Skogsröjning</h4>
+                  <p>Röjning och gallring utförs under sommarhalvåret.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="season-panel" data-season="autumn">
+            <div class="season-panel-inner">
+              <div class="season-months" data-i18n="autumnMonths">September – November</div>
+              <div class="season-items">
+                <div class="season-item">
+                  <span class="season-item-badge">Häckar</span>
+                  <h4>Höstklippning</h4>
+                  <p>Sista klippningen innan vintern. Formning inför viloperioden.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge">Fruktträd</span>
+                  <h4>Beskärning av fruktträd</h4>
+                  <p>Äpple, päron och plommon beskärs efter skörd för bättre frukt nästa år.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--brown">Gärdsgård</span>
+                  <h4>Efterbesiktning</h4>
+                  <p>Kontroll av nybyggda och renoverade gärdsgårdar inför vintern.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="season-panel" data-season="winter">
+            <div class="season-panel-inner">
+              <div class="season-months" data-i18n="winterMonths">December – Februari</div>
+              <div class="season-items">
+                <div class="season-item">
+                  <span class="season-item-badge">Träd</span>
+                  <h4>Beskärning av lövträd</h4>
+                  <p>Lövträd beskärs bäst i vila. Tydlig sikt i kronan underlättar arbetet.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--brown">Gärdsgård</span>
+                  <h4>Materialinventering</h4>
+                  <p>Senvuxen gran hämtas ur skogarna i Jämtland. Planering av vårens projekt.</p>
+                </div>
+                <div class="season-item">
+                  <span class="season-item-badge badge--blue">Offert</span>
+                  <h4>Boka inför säsongen</h4>
+                  <p>Kontakta oss för offert — vi planerar in arbete för kommande vår och sommar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HEDGE TRIMMING DETAIL ==================== -->
+    <section class="section" id="klippning">
+      <div class="container">
+        <div class="detail-row">
+          <div class="detail-text reveal">
+            <h2 class="section-title" data-i18n="hedgeTitle">Klippning & Beskärning</h2>
+            <p data-i18n="hedgeP1">Vi har en lång erfarenhet av att klippa såväl barr- som lövhäckar. Vi gör även nyplanteringar av häckar. Parallellt utför vi beskärning av fruktträd och mindre lövträd. Vid större beskärningar samarbetar vi med arborister som tar sig an de högre träden.</p>
+
+            <ul class="detail-list">
+              <li data-i18n="hedgeLi1">Klippning och beskärning av häckar, buskar och träd</li>
+              <li data-i18n="hedgeLi2">Formklippning</li>
+              <li data-i18n="hedgeLi3">Plantering av häckar</li>
+              <li data-i18n="hedgeLi4">Bortforsling i samarbete med lokalt containerföretag</li>
+            </ul>
+
+            <div class="eco-badge reveal">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+                <path d="M8 12l3 3 5-6"/>
+              </svg>
+              <div>
+                <strong data-i18n="ecoBadgeTitle">80% batteridriven maskinpark</strong>
+                <span data-i18n="ecoBadgeDesc">I samarbete med Husqvarna AB har vi gått från bensindrivna till miljöanpassade maskiner.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-gallery reveal">
+            <div class="gallery-grid" data-gallery="hedge">
+              <button class="gallery-item" data-index="0">
+                <img src="images/hedge-01.jpg" alt="Klippt lövhäck med pilar och gräsmatta" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="1">
+                <img src="images/hero-hedge.jpg" alt="Stor klippt barrhäck längs en grusväg" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="2">
+                <img src="images/fruit-tree.jpg" alt="Blommande fruktträd i trädgård med gunga" loading="lazy" width="800" height="600">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GÄRDSGÅRD DETAIL ==================== -->
+    <section class="section section--earth" id="gardsgard">
+      <div class="container">
+        <div class="detail-row detail-row--reverse">
+          <div class="detail-text reveal">
+            <h2 class="section-title" data-i18n="fenceTitle">Klassisk Gärdsgård</h2>
+            <p data-i18n="fenceP1">Vi reser en klassisk gärdsgård, "Jämtgård", byggd av utvalda stammar av senvuxen gran med en ålder från 75–90 år hämtade ur skogarna i Jämtlands län. Ett kvalitativt material för att utföra ett klassiskt hantverk baserat på en drygt hundraårig tradition.</p>
+            <p data-i18n-html="fenceP2html"><strong>"Stör"</strong> är det som sätts i marken. <strong>"Slana"</strong> är det som läggs vågrätt och som bygger upp gärdsgården. <strong>"Vidja"</strong> är det som används för att binda ihop stör med slana.</p>
+            <p data-i18n="fenceP3">Det som är primärt i vårt val av att använda senvuxen gran är att råvaran innehåller rikligt med kåda och harts som ger ett naturligt skydd i stammarna. I senvuxen gran sitter årsringarna så tätt att de inte kan räknas utan lupp — en kvalitetsstämpel.</p>
+
+            <ul class="detail-list">
+              <li data-i18n="fenceLi1">Byggnation av gärdsgård</li>
+              <li data-i18n="fenceLi2">Renovering av gärdsgårdar</li>
+              <li data-i18n="fenceLi3">Efterbesiktning</li>
+            </ul>
+          </div>
+
+          <div class="detail-gallery reveal">
+            <div class="gallery-grid gallery-grid--large" data-gallery="fence">
+              <button class="gallery-item" data-index="0">
+                <img src="images/fence-01.jpg" alt="Färdig gärdsgård i skogsmiljö med mossa" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="1">
+                <img src="images/fence-02.jpg" alt="Lång gärdsgård på landsbygden" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="2">
+                <img src="images/fence-03.jpg" alt="Gärdsgård längs trädgårdsgång med lusthus" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="3">
+                <img src="images/fence-04.jpg" alt="Gärdsgård under byggnation sommartid" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="4">
+                <img src="images/gate-01.jpg" alt="Dubbelgrind i klassisk stil" loading="lazy" width="800" height="600">
+              </button>
+              <button class="gallery-item" data-index="5">
+                <img src="images/gate-02.jpg" alt="Handbyggd dubbelgrind" loading="lazy" width="800" height="600">
+              </button>
+            </div>
+
+            <!-- Vimeo video -->
+            <div class="video-wrapper reveal">
+              <button class="video-poster" data-vimeo-id="274471137" aria-label="Spela video: Se när vi bygger gärdsgård">
+                <img src="images/fence-01.jpg" alt="" loading="lazy" width="800" height="450" aria-hidden="true">
+                <div class="video-play">
+                  <svg viewBox="0 0 48 48" width="48" height="48" fill="white" aria-hidden="true">
+                    <circle cx="24" cy="24" r="23" fill="rgba(0,0,0,0.5)" stroke="white" stroke-width="2"/>
+                    <polygon points="19,14 19,34 35,24"/>
+                  </svg>
+                </div>
+                <span class="video-label" data-i18n="videoLabel">Stör. Slana. Vidja. — Se när vi bygger gärdsgård</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gärdsgård Explainer -->
+        <div class="fence-explainer reveal">
+          <h3 class="fence-explainer-title" data-i18n="explainerTitle">Så bygger vi en gärdsgård</h3>
+          <div class="fence-explainer-layout">
+            <svg class="fence-svg" viewBox="0 0 600 360" aria-label="Interaktiv illustration av gärdsgårdens delar: stör, slana och vidja">
+              <!-- Ground -->
+              <path d="M0 320 Q150 300 300 310 Q450 320 600 305" fill="none" stroke="#8b7355" stroke-width="2"/>
+              <rect x="0" y="310" width="600" height="50" fill="#e8dcc8" opacity="0.3"/>
+
+              <!-- Posts (Stör) — 5 posts set in ground -->
+              <g class="fence-part" data-part="stor">
+                <line x1="80" y1="60" x2="72" y2="320" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="180" y1="40" x2="172" y2="315" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="280" y1="35" x2="272" y2="312" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="380" y1="40" x2="372" y2="315" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="480" y1="55" x2="472" y2="318" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+              </g>
+
+              <!-- Rails (Slana) — horizontal members -->
+              <g class="fence-part" data-part="slana">
+                <path d="M55 110 Q280 90 500 105" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M55 170 Q280 150 500 165" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M55 230 Q280 210 500 225" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M58 280 Q280 262 498 276" fill="none" stroke="#a0784c" stroke-width="4.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Bindings (Vidja) — ties at each post/rail intersection -->
+              <g class="fence-part" data-part="vidja">
+                <!-- Post 1 bindings -->
+                <ellipse cx="78" cy="110" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 78 110)"/>
+                <ellipse cx="77" cy="170" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 77 170)"/>
+                <ellipse cx="76" cy="230" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 76 230)"/>
+                <!-- Post 2 bindings -->
+                <ellipse cx="178" cy="100" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 178 100)"/>
+                <ellipse cx="177" cy="160" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 177 160)"/>
+                <ellipse cx="176" cy="220" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 176 220)"/>
+                <!-- Post 3 bindings -->
+                <ellipse cx="278" cy="95" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 278 95)"/>
+                <ellipse cx="277" cy="155" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 277 155)"/>
+                <ellipse cx="276" cy="215" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 276 215)"/>
+                <!-- Post 4 bindings -->
+                <ellipse cx="378" cy="100" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 378 100)"/>
+                <ellipse cx="377" cy="160" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 377 160)"/>
+                <ellipse cx="376" cy="220" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 376 220)"/>
+                <!-- Post 5 bindings -->
+                <ellipse cx="478" cy="105" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 478 105)"/>
+                <ellipse cx="477" cy="165" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 477 165)"/>
+                <ellipse cx="476" cy="225" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 476 225)"/>
+              </g>
+
+              <!-- Labels (shown on hover/click) -->
+              <g class="fence-label fence-label--stor" data-part="stor">
+                <rect x="100" y="45" width="58" height="28" rx="4" fill="#2d5016"/>
+                <text x="129" y="64" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Stör</text>
+                <line x1="95" y1="59" x2="82" y2="70" stroke="#2d5016" stroke-width="2"/>
+              </g>
+              <g class="fence-label fence-label--slana" data-part="slana">
+                <rect x="320" y="135" width="68" height="28" rx="4" fill="#2d5016"/>
+                <text x="354" y="154" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Slana</text>
+                <line x1="315" y1="149" x2="300" y2="155" stroke="#2d5016" stroke-width="2"/>
+              </g>
+              <g class="fence-label fence-label--vidja" data-part="vidja">
+                <rect x="410" y="195" width="62" height="28" rx="4" fill="#2d5016"/>
+                <text x="441" y="214" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Vidja</text>
+                <line x1="405" y1="209" x2="386" y2="218" stroke="#2d5016" stroke-width="2"/>
+              </g>
+            </svg>
+
+            <div class="fence-explainer-info">
+              <div class="fence-info-card active" data-part="default">
+                <p data-i18n="explainerDefault">Peka på eller klicka på gärdsgårdens delar för att lära dig mer om det traditionella hantverket.</p>
+              </div>
+              <div class="fence-info-card" data-part="stor">
+                <h4>Stör</h4>
+                <p>De vertikala stolparna som sätts i marken. Tillverkade av senvuxen gran från Jämtlands skogar, 75–90 år gamla. Den höga kåd- och hartshalten ger naturligt skydd mot röta.</p>
+              </div>
+              <div class="fence-info-card" data-part="slana">
+                <h4>Slana</h4>
+                <p>De horisontella stängerna som läggs vågrätt och bygger upp gärdsgården. Klyvs ur samma kvalitativa senvuxna gran och flätas mellan störparen.</p>
+              </div>
+              <div class="fence-info-card" data-part="vidja">
+                <h4>Vidja</h4>
+                <p>Böjliga kvistar som binds runt stör och slana för att hålla ihop konstruktionen. Tre vidjor knyts generellt på varje störpar — ett handgrepp som kräver erfarenhet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / After Slider -->
+        <div class="before-after reveal">
+          <h3 class="before-after-title" data-i18n="baTitle">Före & Efter</h3>
+          <div class="ba-slider" id="baSlider">
+            <div class="ba-image ba-image--after">
+              <img src="images/fence-02.jpg" alt="Färdigbyggd gärdsgård på landsbygden" loading="lazy" width="800" height="600">
+              <span class="ba-label ba-label--after" data-i18n="baLabelAfter">Efter</span>
+            </div>
+            <div class="ba-image ba-image--before">
+              <img src="images/before.jpg" alt="Riven gärdsgård, material på marken" loading="lazy" width="800" height="600">
+              <span class="ba-label ba-label--before" data-i18n="baLabelBefore">Före</span>
+            </div>
+            <div class="ba-handle" id="baHandle" role="slider" aria-label="Dra för att jämföra före och efter" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-knob">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="8 4 4 12 8 20"/><polyline points="16 4 20 12 16 20"/></svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ADDITIONAL SERVICES ==================== -->
+    <section class="section section--pale" id="ovriga-tjanster">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="extraTitle">Fler tjänster</h2>
+        <div class="extra-services-grid">
+          <!-- Lawn -->
+          <div class="extra-service reveal">
+            <div class="extra-service-icon">
+              <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="14" width="28" height="4" rx="1"/>
+                <line x1="8" y1="18" x2="8" y2="28"/>
+                <line x1="16" y1="18" x2="16" y2="28"/>
+                <line x1="24" y1="18" x2="24" y2="28"/>
+                <path d="M4 14 C4 14 8 4 16 4 C24 4 28 14 28 14"/>
+              </svg>
+            </div>
+            <h3 data-i18n="lawnTitle">Anläggning av gräsmatta</h3>
+            <p data-i18n="lawnP">Vi anlägger färdiga gräsmattor för utrullning. Vi ansvarar för markberedning och ger dig rätt underlag för att din nya gräsmatta ska trivas. Vi gör initialt ett besök hos dig för mätningar och en bedömning av vilka maskiner vi ska använda för bästa möjliga markberedning.</p>
+            <ul class="detail-list">
+              <li data-i18n="lawnLi1">Markberedning</li>
+              <li data-i18n="lawnLi2">Beställning av maskiner och färdig gräsmatta</li>
+              <li data-i18n="lawnLi3">Utläggning av matta</li>
+            </ul>
+          </div>
+
+          <!-- Forest -->
+          <div class="extra-service reveal">
+            <div class="extra-service-icon">
+              <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 2 L10 12 L13 12 L8 22 L12 22 L6 30 L26 30 L20 22 L24 22 L19 12 L22 12 Z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="forestTitle">Skogsröjning</h3>
+            <p data-i18n="forestP">Vi är certifierade skogsröjare och innehar "grönt körkort" utfärdat av PEFC, registrerat i EC skogsregister för röjning i skog. Vi utför röjningar i första hand i samarbete med etablerade skogsbolag.</p>
+            <ul class="detail-list">
+              <li data-i18n="forestLi1">Traktplanering</li>
+              <li data-i18n="forestLi2">Arbetsstråk</li>
+              <li data-i18n="forestLi3">Hyggesrensning</li>
+              <li data-i18n="forestLi4">Enkelställning av plantor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="om-oss">
+      <div class="container">
+        <div class="about-row">
+          <div class="about-image reveal">
+            <img src="images/lars-portrait.png" alt="Lars Falk" loading="lazy">
+          </div>
+          <div class="about-text reveal">
+            <h2 class="section-title" data-i18n="aboutTitle">Om oss</h2>
+            <p data-i18n="aboutP1">Mitt namn är Lars Falk. Jag har mitt ursprung från Jämtland och har växt upp i Stockholm och Jämtland. Jag driver Trädgård- och Gärdsgårds Entreprenad sedan många år tillbaka.</p>
+            <p data-i18n="aboutP2">Vi är specialiserade på att klippa och beskära häckar, buskar, fruktträd och "stänga" klassiska gärdsgårdar. Idag har jag fem professionella medarbetare som samtliga är erfarna och specialiserade för att uppnå hög kvalitet på de trädgårdstjänster vi erbjuder.</p>
+            <p data-i18n="aboutP3">Jag började klippa häckar och träd i slutet på 70-talet tillsammans med min far som lärde mig hantverket, parallellt som jag tog min examen i ekonomi.</p>
+            <p data-i18n="aboutP4">En viktig del i mitt företag är att löpande utveckla vårt samarbete med våra leverantörer. Vi har haft en lång och givande relation med Husqvarna AB och samarbetar sedan många år med Blomstergården i Gnesta AB.</p>
+
+            <div class="about-stats">
+              <div class="about-stat">
+                <span class="about-stat-number" data-i18n="stat1">45+</span>
+                <span class="about-stat-label" data-i18n="stat1Label">års erfarenhet</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-number">5</span>
+                <span class="about-stat-label" data-i18n="stat2Label">medarbetare</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-number">6</span>
+                <span class="about-stat-label" data-i18n="stat3Label">län</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ENVIRONMENTAL POLICY ==================== -->
+    <section class="section section--pale" id="miljopolicy">
+      <div class="container container--narrow">
+        <div class="policy reveal">
+          <div class="policy-header">
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 28 C16 28 6 22 6 14 C6 6 16 2 16 2"/>
+              <path d="M16 28 C16 28 26 22 26 14 C26 6 16 2 16 2"/>
+              <line x1="16" y1="10" x2="16" y2="28"/>
+              <path d="M16 16 L12 12"/>
+              <path d="M16 20 L21 16"/>
+            </svg>
+            <h2 class="section-title" data-i18n="policyTitle">Miljöpolicy</h2>
+          </div>
+          <p class="policy-intro" data-i18n="policyIntro">Vårt miljöarbete och vår policy är att värna om miljön för kommande generationer, att utveckla och säkerställa våra affärs- och produktionsenheter som bidrar till att förbättra vår miljö.</p>
+
+          <div class="policy-columns">
+            <div class="policy-column">
+              <h3 data-i18n="policyCol1Title">Krav på vårt eget företag</h3>
+              <ul class="policy-list">
+                <li>Utveckla, säkerställa och miljöanpassa kedjan av tjänster och produkter vi köper från producent till konsument.</li>
+                <li>Hålla oss ajour med hur statliga verk och myndigheter handlägger miljöfrågor inom teknik, material, natur och utsläpp.</li>
+                <li>Löpande inventera och utveckla vårt val av teknik, material och tjänster för att främja vår miljö.</li>
+              </ul>
+            </div>
+            <div class="policy-column">
+              <h3 data-i18n="policyCol2Title">Krav på våra leverantörer</h3>
+              <ul class="policy-list">
+                <li>De ska vara certifierade och i sin vardag respektera och efterleva sina uppsatta normer.</li>
+                <li>De ska utveckla och använda material, enheter och teknik som värnar om vår miljö.</li>
+                <li>De ska internt utbilda sin personal för att främja ett framåtskridande miljöarbete.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section section--dark" id="kontakt">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="contactTitle">Kontakta oss för offert</h2>
+        <div class="contact-row">
+          <!-- Contact Info -->
+          <div class="contact-info reveal">
+            <div class="contact-company">
+              <strong>Maxilium</strong><br>
+              Ölmevägen 17<br>
+              123 32 Farsta
+            </div>
+
+            <div class="contact-links">
+              <a href="tel:+46702605690" class="contact-link">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                070 – 260 56 90
+              </a>
+              <a href="mailto:info@hackklippning.com" class="contact-link">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="16" height="12" rx="1.5"/>
+                  <polyline points="2,4 10,11 18,4"/>
+                </svg>
+                Maila oss
+              </a>
+            </div>
+
+            <div class="contact-details">
+              <p><strong>Reg. nr / F-skatt:</strong> SE1958050682501</p>
+              <p><strong>Försäkringsbolag:</strong> Länsförsäkringar</p>
+              <p><strong>Bank:</strong> Swedbank</p>
+            </div>
+
+            <div class="contact-areas">
+              <h3 data-i18n="contactAreasTitle">Vi är aktiva i följande områden</h3>
+              <div class="area-map-wrap">
+                <svg class="area-map" viewBox="0 0 280 500" aria-label="Karta över våra verksamhetsområden i Sverige">
+                  <!-- Simplified Sweden outline -->
+                  <path class="map-outline" d="M140 10 C160 10 200 30 210 60 C220 90 230 110 225 140 C220 170 200 190 210 220 C220 250 210 270 200 290 C190 310 180 340 170 360 C160 380 170 400 160 420 C150 440 140 455 130 470 C120 480 110 485 100 480 C90 475 80 460 75 440 C70 420 60 400 55 380 C50 360 55 340 60 320 C65 300 60 280 65 260 C70 240 80 230 85 210 C90 190 80 170 85 150 C90 130 100 110 105 90 C110 70 120 50 130 30 C135 20 138 10 140 10Z" fill="#dde6d5" stroke="#b5c4a8" stroke-width="1.5"/>
+
+                  <!-- Jämtlands län (north) -->
+                  <path class="map-region" data-region="jamtland" d="M90 100 C100 85 120 75 145 78 C170 80 190 90 195 105 C200 120 195 140 185 150 C175 160 155 165 135 162 C115 160 95 150 88 135 C82 120 85 110 90 100Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="jamtland" x="140" y="125" text-anchor="middle" font-size="11" fill="#2d5016" font-weight="600">Jämtland</text>
+
+                  <!-- Uppsala län -->
+                  <path class="map-region" data-region="uppsala" d="M138 230 C148 222 165 220 175 228 C185 236 188 248 182 258 C176 268 162 272 150 268 C138 264 132 250 134 240 C135 235 136 232 138 230Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="uppsala" x="160" y="250" text-anchor="middle" font-size="10" fill="#2d5016" font-weight="600">Uppsala</text>
+
+                  <!-- Västmanlands län -->
+                  <path class="map-region" data-region="vastmanland" d="M105 248 C112 240 125 237 135 242 C145 247 148 258 142 268 C136 278 122 282 112 277 C102 272 98 260 102 252 Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="vastmanland" x="122" y="263" text-anchor="middle" font-size="9" fill="#2d5016" font-weight="600">Västmanland</text>
+
+                  <!-- Stockholms län -->
+                  <path class="map-region" data-region="stockholm" d="M155 265 C165 258 182 258 190 268 C198 278 196 292 186 300 C176 308 160 308 152 298 C144 288 146 274 155 265Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="stockholm" x="172" y="286" text-anchor="middle" font-size="10" fill="#2d5016" font-weight="600">Stockholm</text>
+
+                  <!-- Södermanlands län -->
+                  <path class="map-region" data-region="sodermanland" d="M118 290 C128 282 148 280 158 290 C168 300 168 315 158 325 C148 335 128 335 118 325 C108 315 108 300 118 290Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="sodermanland" x="138" y="312" text-anchor="middle" font-size="9" fill="#2d5016" font-weight="600">Sörmland</text>
+
+                  <!-- Östergötlands län -->
+                  <path class="map-region" data-region="ostergotland" d="M100 330 C112 322 132 320 145 330 C158 340 160 358 148 370 C136 382 115 382 103 370 C91 358 90 342 100 330Z" fill="#4a7c29" fill-opacity="0.25" stroke="#4a7c29" stroke-width="2"/>
+                  <text class="map-region-label" data-region="ostergotland" x="125" y="355" text-anchor="middle" font-size="9" fill="#2d5016" font-weight="600">Östergötland</text>
+
+                  <!-- Active region marker dots -->
+                  <circle class="map-dot" data-region="jamtland" cx="140" cy="115" r="4" fill="#c45e3a"/>
+                  <circle class="map-dot" data-region="uppsala" cx="160" cy="240" r="4" fill="#c45e3a"/>
+                  <circle class="map-dot" data-region="vastmanland" cx="122" cy="255" r="4" fill="#c45e3a"/>
+                  <circle class="map-dot" data-region="stockholm" cx="172" cy="278" r="4" fill="#c45e3a"/>
+                  <circle class="map-dot" data-region="sodermanland" cx="138" cy="305" r="4" fill="#c45e3a"/>
+                  <circle class="map-dot" data-region="ostergotland" cx="125" cy="348" r="4" fill="#c45e3a"/>
+                </svg>
+
+                <div class="area-map-tooltip" id="mapTooltip" hidden>
+                  <strong id="mapTooltipTitle"></strong>
+                  <span id="mapTooltipServices"></span>
+                </div>
+              </div>
+              <p class="area-map-hint" data-i18n="mapHint">Peka på kartan för att se tjänster per region.</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form reveal" id="contactForm" action="#" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fornamn" data-i18n="labelFirstName">Förnamn <span class="required">*</span></label>
+                <input type="text" id="fornamn" name="fornamn" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="efternamn" data-i18n="labelLastName">Efternamn <span class="required">*</span></label>
+                <input type="text" id="efternamn" name="efternamn" required autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefon" data-i18n="labelPhone">Telefon <span class="required">*</span></label>
+                <input type="tel" id="telefon" name="telefon" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="epost" data-i18n="labelEmail">E-post <span class="required">*</span></label>
+                <input type="email" id="epost" name="epost" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adress" data-i18n="labelAddress">Adress</label>
+                <input type="text" id="adress" name="adress" autocomplete="street-address">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group form-group--small">
+                <label for="postnummer" data-i18n="labelPostal">Postnummer</label>
+                <input type="text" id="postnummer" name="postnummer" autocomplete="postal-code">
+              </div>
+              <div class="form-group">
+                <label for="ort" data-i18n="labelCity">Ort</label>
+                <input type="text" id="ort" name="ort" autocomplete="address-level2">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tjanst" data-i18n="labelService">Tjänst <span class="required">*</span></label>
+              <select id="tjanst" name="tjanst" required>
+                <option value="" disabled selected data-i18n="servicePlaceholder">Välj tjänst...</option>
+                <option value="hackar-frukttrad" data-i18n="serviceOpt1">Häckar och fruktträd</option>
+                <option value="gardsgard-nybygge" data-i18n="serviceOpt2">Gärdsgård, nybygge</option>
+                <option value="gardsgard-reparation" data-i18n="serviceOpt3">Gärdsgård, reparation</option>
+                <option value="grasmatta" data-i18n="serviceOpt4">Anläggning av gräsmatta</option>
+                <option value="skogsrojning" data-i18n="serviceOpt5">Skogsröjning</option>
+                <option value="ovrigt" data-i18n="serviceOpt6">Övrigt</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="meddelande" data-i18n="labelMessage">Meddelande</label>
+              <textarea id="meddelande" name="meddelande" rows="4"></textarea>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" name="gdpr" required>
+                <span>Jag godkänner att mina uppgifter sparas så att min förfrågan kan besvaras. <span class="required">*</span></span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" data-i18n="submitBtn">Skicka förfrågan</button>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-tagline" data-i18n="footerTagline">ett företag. två branscher. inga konstigheter.</p>
+        <p class="footer-copy">Copyright &copy; 2019–2026 Maxilium</p>
+        <p class="footer-reg">Reg. nr / F-skatt: SE1958050682501</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvisning" hidden>
+    <button class="lightbox-close" aria-label="Stäng">&times;</button>
+    <button class="lightbox-prev" aria-label="Föregående bild">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-next" aria-label="Nästa bild">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
+  <!-- Language toggle (floating) -->
+  <div class="lang-toggle" id="langToggle" role="radiogroup" aria-label="Språk / Language">
+    <button class="lang-btn active" data-lang="sv" aria-checked="true" role="radio">SV</button>
+    <button class="lang-btn" data-lang="en" aria-checked="false" role="radio">EN</button>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
