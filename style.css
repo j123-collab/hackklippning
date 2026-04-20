@@ -1378,87 +1378,25 @@ ul {
   text-align: center;
 }
 
-.fence-process-carousel {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-}
-
-.fence-process-arrow {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  align-self: center;
-  height: 44px;
-  padding: 0;
-  background: #fff;
-  border: 1px solid var(--border);
-  color: var(--green-deep);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
-}
-
-.fence-process-arrow:hover {
-  background: var(--green-deep);
-  border-color: var(--green-deep);
-  color: #fff;
-  transform: scale(1.05);
-}
-
-.fence-process-arrow:focus-visible {
-  outline: 3px solid var(--green-mid);
-  outline-offset: 2px;
-}
-
 .fence-process-steps {
-  flex: 1;
-  min-width: 0;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
   padding-left: 0;
-  margin: 0;
+  counter-reset: process;
 }
 
 .fence-process-step {
-  display: none;
+  position: relative;
+  display: grid;
   grid-template-columns: 36px 32px 1fr;
   gap: 12px;
   align-items: start;
-  padding: 20px;
+  padding: 16px;
   background: #fff;
   border: 1px solid var(--border);
   border-left: 3px solid var(--green-mid);
   border-radius: var(--radius);
-  min-height: 140px;
-}
-
-.fence-process-step.active {
-  display: grid;
-  animation: fadeIn 0.3s ease;
-}
-
-.fence-process-indicator {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 4px;
-  margin-top: 16px;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.fence-process-indicator .fence-process-current {
-  font-size: 1.3rem;
-  color: var(--green-deep);
-  font-weight: 700;
-}
-
-.fence-process-indicator .fence-process-sep {
-  opacity: 0.5;
-  margin: 0 2px;
 }
 
 .fence-process-num {
@@ -1892,14 +1830,38 @@ ul {
   .lightbox-prev { left: 24px; }
   .lightbox-next { right: 24px; }
 
-  .fence-process-arrow {
-    width: 48px;
-    height: 48px;
+  .fence-process-steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
   }
 
   .fence-process-step {
-    padding: 28px 32px;
-    min-height: 160px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 20px 14px;
+    border-left: none;
+    border-top: 3px solid var(--green-mid);
+  }
+
+  .fence-process-num {
+    grid-column: 1;
+    margin-bottom: 4px;
+  }
+
+  .fence-process-icon {
+    grid-column: 1;
+    margin-bottom: 8px;
+  }
+
+  .fence-process-step h5 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .fence-process-step p {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .fence-gates {

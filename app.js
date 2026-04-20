@@ -436,45 +436,6 @@
     updateFenceCaption();
   }
 
-  // ==================== FENCE PROCESS CAROUSEL ====================
-  var processCarousel = document.getElementById('fenceProcess');
-  if (processCarousel) {
-    var processSteps = processCarousel.querySelectorAll('.fence-process-step');
-    var processPrev = document.getElementById('fenceProcessPrev');
-    var processNext = document.getElementById('fenceProcessNext');
-    var processCurrent = processCarousel.querySelector('.fence-process-current');
-    var processIndex = 0;
-
-    function showProcessStep(i) {
-      processIndex = (i + processSteps.length) % processSteps.length;
-      processSteps.forEach(function (s, idx) {
-        s.classList.toggle('active', idx === processIndex);
-      });
-      if (processCurrent) processCurrent.textContent = processIndex + 1;
-    }
-
-    if (processPrev) {
-      processPrev.addEventListener('click', function () {
-        showProcessStep(processIndex - 1);
-      });
-    }
-    if (processNext) {
-      processNext.addEventListener('click', function () {
-        showProcessStep(processIndex + 1);
-      });
-    }
-
-    processCarousel.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') {
-        showProcessStep(processIndex - 1);
-        e.preventDefault();
-      } else if (e.key === 'ArrowRight') {
-        showProcessStep(processIndex + 1);
-        e.preventDefault();
-      }
-    });
-  }
-
   // ==================== BEFORE / AFTER SLIDER ====================
   var baSlider = document.getElementById('baSlider');
   var baHandle = document.getElementById('baHandle');

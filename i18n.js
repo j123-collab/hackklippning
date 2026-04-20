@@ -119,8 +119,6 @@ var I18N = {
     processStep4Desc: 'Slanorna flätas mellan störparen och binds samman med vidja — tre per par.',
     processStep5Title: 'Efterbesiktning',
     processStep5Desc: 'Vi går igenom sträckning, spänning och bindningar och lämnar underhållsråd.',
-    processPrevLabel: 'Föregående steg',
-    processNextLabel: 'Nästa steg',
 
     // Gates
     gatesTitle: 'Grindar',
@@ -330,8 +328,6 @@ var I18N = {
     processStep4Desc: 'Rails are woven between the post pairs and tied with vidja — three bindings per pair.',
     processStep5Title: 'Final inspection',
     processStep5Desc: 'We walk the line, check tension and bindings, and leave maintenance guidance.',
-    processPrevLabel: 'Previous step',
-    processNextLabel: 'Next step',
 
     // Gates
     gatesTitle: 'Gates',
