@@ -352,6 +352,7 @@
   var fenceLabels = document.querySelectorAll('.fence-label');
   var fenceInfoCards = document.querySelectorAll('.fence-info-card');
   var fenceCaption = document.getElementById('fenceCaption');
+  var fenceOrder = ['stor', 'slana', 'vidja'];
   var activeFencePart = null;
 
   function updateFenceCaption() {
@@ -362,9 +363,11 @@
       fenceCaption.textContent = strings.fenceCaptionHint || '';
       return;
     }
+    var idx = fenceOrder.indexOf(activeFencePart);
     var titleKey = 'explainer' + activeFencePart.charAt(0).toUpperCase() + activeFencePart.slice(1) + 'Title';
+    var title = strings[titleKey] || activeFencePart;
     fenceCaption.classList.add('active');
-    fenceCaption.textContent = strings[titleKey] || activeFencePart;
+    fenceCaption.textContent = (idx + 1) + ' / ' + fenceOrder.length + ' · ' + title;
   }
 
   function activateFencePart(partName) {
@@ -433,7 +436,6 @@
     });
 
     // Prev / next cycle through the parts
-    var fenceOrder = ['stor', 'slana', 'vidja'];
     var fencePrevBtn = document.getElementById('fencePrev');
     var fenceNextBtn = document.getElementById('fenceNext');
 
