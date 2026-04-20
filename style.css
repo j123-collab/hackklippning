@@ -1346,14 +1346,51 @@ ul {
   border-radius: 4px;
 }
 
-/* Caption line under the SVG explainer */
-.fence-caption {
+/* Navigation row below the SVG explainer */
+.fence-nav {
   margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.fence-nav-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--green-deep);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.fence-nav-btn:hover {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.fence-nav-btn:focus-visible {
+  outline: 3px solid var(--green-mid);
+  outline-offset: 2px;
+}
+
+.fence-caption {
+  flex: 0 1 auto;
+  min-width: 160px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   font-style: italic;
-  min-height: 1.4em;
+  margin: 0;
   transition: color 0.2s;
 }
 
@@ -1361,6 +1398,8 @@ ul {
   color: var(--green-deep);
   font-style: normal;
   font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
 }
 
 /* ==================== FENCE PROCESS STEPPER ==================== */

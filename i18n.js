@@ -106,6 +106,8 @@ var I18N = {
     fencePartAriaSlana: 'Slana — aktivera för att läsa mer',
     fencePartAriaVidja: 'Vidja — aktivera för att läsa mer',
     fenceCaptionHint: 'Välj en del för att läsa mer',
+    fencePrevLabel: 'Föregående del',
+    fenceNextLabel: 'Nästa del',
 
     // Build process
     processTitle: 'Från skog till färdig gärdsgård',
@@ -315,6 +317,8 @@ var I18N = {
     fencePartAriaSlana: 'Slana — activate to read more',
     fencePartAriaVidja: 'Vidja — activate to read more',
     fenceCaptionHint: 'Select a part to read more',
+    fencePrevLabel: 'Previous part',
+    fenceNextLabel: 'Next part',
 
     // Build process
     processTitle: 'From forest to finished fence',

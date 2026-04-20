@@ -432,6 +432,20 @@
       }
     });
 
+    // Prev / next cycle through the parts
+    var fenceOrder = ['stor', 'slana', 'vidja'];
+    var fencePrevBtn = document.getElementById('fencePrev');
+    var fenceNextBtn = document.getElementById('fenceNext');
+
+    function cycleFencePart(delta) {
+      var currentIndex = activeFencePart ? fenceOrder.indexOf(activeFencePart) : (delta > 0 ? -1 : 0);
+      var newIndex = (currentIndex + delta + fenceOrder.length) % fenceOrder.length;
+      activateFencePart(fenceOrder[newIndex]);
+    }
+
+    if (fencePrevBtn) fencePrevBtn.addEventListener('click', function () { cycleFencePart(-1); });
+    if (fenceNextBtn) fenceNextBtn.addEventListener('click', function () { cycleFencePart(1); });
+
     // Initialise caption
     updateFenceCaption();
   }
