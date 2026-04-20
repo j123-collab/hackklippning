@@ -102,6 +102,37 @@ var I18N = {
     explainerSlanaDesc: 'De horisontella stängerna som läggs vågrätt och bygger upp gärdsgården. Klyvs ur samma kvalitativa senvuxna gran och flätas mellan störparen.',
     explainerVidjaTitle: 'Vidja',
     explainerVidjaDesc: 'Böjliga kvistar som binds runt stör och slana för att hålla ihop konstruktionen. Tre vidjor knyts generellt på varje störpar — ett handgrepp som kräver erfarenhet.',
+    fencePartAriaStor: 'Stör — aktivera för att läsa mer',
+    fencePartAriaSlana: 'Slana — aktivera för att läsa mer',
+    fencePartAriaVidja: 'Vidja — aktivera för att läsa mer',
+    fenceCaptionHint: 'Välj en del för att läsa mer',
+
+    // Build process
+    processTitle: 'Från skog till färdig gärdsgård',
+    processStep1Title: 'Urval i skogen',
+    processStep1Desc: 'Senvuxen gran, 75–90 år, väljs ut och avverkas i Jämtlands skogar.',
+    processStep2Title: 'Klyvning & beredning',
+    processStep2Desc: 'Stammarna kvistas, kapas i längder och klyvs till stör, slana och vidja.',
+    processStep3Title: 'Nedsättning av stör',
+    processStep3Desc: 'Störparen sätts parvis i marken längs den uppmätta sträckningen.',
+    processStep4Title: 'Flätning & bindning',
+    processStep4Desc: 'Slanorna flätas mellan störparen och binds samman med vidja — tre per par.',
+    processStep5Title: 'Efterbesiktning',
+    processStep5Desc: 'Vi går igenom sträckning, spänning och bindningar och lämnar underhållsråd.',
+
+    // Gates
+    gatesTitle: 'Grindar',
+    gatesP: 'Till gärdsgården bygger vi enkel- eller dubbelgrind i samma hantverk och material som själva stängslet. Grindstolparna dimensioneras grövre än vanliga stör och förankras djupare för att bära tyngden utan att sätta sig över tid.',
+    gatesLi1: 'Enkelgrind för gångtrafik',
+    gatesLi2: 'Dubbelgrind för traktor, häst eller maskin',
+    gatesLi3: 'Handsmidda gångjärn på förfrågan',
+
+    // Terrain & variants
+    variantsTitle: 'Terräng & regionala varianter',
+    variantsCol1Title: 'Kuperad terräng',
+    variantsCol1Desc: 'På sluttande mark följer stören marklutningen och slanorna stegas i höjd mellan störparen. Branta partier förankras extra och bindningarna tätnas för att bära belastningen.',
+    variantsCol2Title: 'Regionala varianter',
+    variantsCol2Desc: 'Jämtgården känns igen på sin höga profil, täta slana och lätt lutande störpar. Vi bygger i klassisk Jämtgård men kan anpassa höjd och täthet efter plats och önskemål.',
 
     // Before/after
     baTitle: 'Före & Efter',
@@ -280,6 +311,37 @@ var I18N = {
     explainerSlanaDesc: 'The horizontal members laid to build up the fence. Split from the same high-quality slow-grown spruce and woven between the post pairs.',
     explainerVidjaTitle: 'Vidja (Bindings)',
     explainerVidjaDesc: 'Flexible branches tied around the posts and rails to hold the structure together. Three bindings are typically tied at each post pair — a skill that requires experience.',
+    fencePartAriaStor: 'Stör — activate to read more',
+    fencePartAriaSlana: 'Slana — activate to read more',
+    fencePartAriaVidja: 'Vidja — activate to read more',
+    fenceCaptionHint: 'Select a part to read more',
+
+    // Build process
+    processTitle: 'From forest to finished fence',
+    processStep1Title: 'Selection in the forest',
+    processStep1Desc: 'Slow-grown spruce, 75–90 years old, is hand-selected and felled in the forests of Jämtland.',
+    processStep2Title: 'Splitting & preparation',
+    processStep2Desc: 'Trunks are de-limbed, cut to length and split into posts, rails and bindings.',
+    processStep3Title: 'Setting the posts',
+    processStep3Desc: 'Post pairs are driven into the ground along the marked line.',
+    processStep4Title: 'Weaving & binding',
+    processStep4Desc: 'Rails are woven between the post pairs and tied with vidja — three bindings per pair.',
+    processStep5Title: 'Final inspection',
+    processStep5Desc: 'We walk the line, check tension and bindings, and leave maintenance guidance.',
+
+    // Gates
+    gatesTitle: 'Gates',
+    gatesP: 'We build single or double gates in the same craft and material as the fence itself. Gate posts are sized heavier than ordinary stör and anchored deeper to carry the weight without settling over time.',
+    gatesLi1: 'Single gate for foot traffic',
+    gatesLi2: 'Double gate for tractor, horse or machinery',
+    gatesLi3: 'Hand-forged hinges on request',
+
+    // Terrain & variants
+    variantsTitle: 'Terrain & regional variants',
+    variantsCol1Title: 'Sloped terrain',
+    variantsCol1Desc: 'On sloping ground the posts follow the contour and the rails step down in height between post pairs. Steep sections get extra anchoring and tighter bindings to carry the load.',
+    variantsCol2Title: 'Regional variants',
+    variantsCol2Desc: 'Jämtgård is recognised by its tall profile, tight rails and slightly leaning post pairs. We build in the classic Jämtgård style but can adapt height and density to the site and your preference.',
 
     // Before/after
     baTitle: 'Before & After',

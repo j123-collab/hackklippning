@@ -389,7 +389,7 @@
               <rect x="0" y="310" width="600" height="50" fill="#e8dcc8" opacity="0.3"/>
 
               <!-- Posts (Stör) — 5 posts set in ground -->
-              <g class="fence-part" data-part="stor">
+              <g class="fence-part" data-part="stor" tabindex="0" role="button" aria-label="Stör — aktivera för att läsa mer" data-i18n-aria="fencePartAriaStor">
                 <line x1="80" y1="60" x2="72" y2="320" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
                 <line x1="180" y1="40" x2="172" y2="315" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
                 <line x1="280" y1="35" x2="272" y2="312" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
@@ -398,7 +398,7 @@
               </g>
 
               <!-- Rails (Slana) — horizontal members -->
-              <g class="fence-part" data-part="slana">
+              <g class="fence-part" data-part="slana" tabindex="0" role="button" aria-label="Slana — aktivera för att läsa mer" data-i18n-aria="fencePartAriaSlana">
                 <path d="M55 110 Q280 90 500 105" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
                 <path d="M55 170 Q280 150 500 165" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
                 <path d="M55 230 Q280 210 500 225" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
@@ -406,7 +406,7 @@
               </g>
 
               <!-- Bindings (Vidja) — ties at each post/rail intersection -->
-              <g class="fence-part" data-part="vidja">
+              <g class="fence-part" data-part="vidja" tabindex="0" role="button" aria-label="Vidja — aktivera för att läsa mer" data-i18n-aria="fencePartAriaVidja">
                 <!-- Post 1 bindings -->
                 <ellipse cx="78" cy="110" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 78 110)"/>
                 <ellipse cx="77" cy="170" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 77 170)"/>
@@ -447,7 +447,7 @@
               </g>
             </svg>
 
-            <div class="fence-explainer-info">
+            <div class="fence-explainer-info" aria-live="polite">
               <div class="fence-info-card active" data-part="default">
                 <p data-i18n="explainerDefault">Peka på eller klicka på gärdsgårdens delar för att lära dig mer om det traditionella hantverket.</p>
               </div>
@@ -463,6 +463,101 @@
                 <h4>Vidja</h4>
                 <p>Böjliga kvistar som binds runt stör och slana för att hålla ihop konstruktionen. Tre vidjor knyts generellt på varje störpar — ett handgrepp som kräver erfarenhet.</p>
               </div>
+            </div>
+          </div>
+
+          <p class="fence-caption" id="fenceCaption" data-i18n="fenceCaptionHint" aria-hidden="true">Välj en del för att läsa mer</p>
+
+          <div class="fence-process">
+            <h4 class="fence-process-title" data-i18n="processTitle">Från skog till färdig gärdsgård</h4>
+            <ol class="fence-process-steps">
+              <li class="fence-process-step">
+                <span class="fence-process-num" aria-hidden="true">1</span>
+                <svg class="fence-process-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2 L8 10 L10 10 L6 18 L18 18 L14 10 L16 10 Z"/>
+                  <line x1="12" y1="18" x2="12" y2="22"/>
+                </svg>
+                <h5 data-i18n="processStep1Title">Urval i skogen</h5>
+                <p data-i18n="processStep1Desc">Senvuxen gran, 75–90 år, väljs ut och avverkas i Jämtlands skogar.</p>
+              </li>
+              <li class="fence-process-step">
+                <span class="fence-process-num" aria-hidden="true">2</span>
+                <svg class="fence-process-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12 L20 12"/>
+                  <path d="M8 6 L4 12 L8 18"/>
+                  <path d="M16 6 L20 12 L16 18"/>
+                </svg>
+                <h5 data-i18n="processStep2Title">Klyvning & beredning</h5>
+                <p data-i18n="processStep2Desc">Stammarna kvistas, kapas i längder och klyvs till stör, slana och vidja.</p>
+              </li>
+              <li class="fence-process-step">
+                <span class="fence-process-num" aria-hidden="true">3</span>
+                <svg class="fence-process-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="8" y1="3" x2="8" y2="20"/>
+                  <line x1="16" y1="3" x2="16" y2="20"/>
+                  <path d="M3 20 Q12 18 21 20"/>
+                </svg>
+                <h5 data-i18n="processStep3Title">Nedsättning av stör</h5>
+                <p data-i18n="processStep3Desc">Störparen sätts parvis i marken längs den uppmätta sträckningen.</p>
+              </li>
+              <li class="fence-process-step">
+                <span class="fence-process-num" aria-hidden="true">4</span>
+                <svg class="fence-process-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="6" y1="4" x2="6" y2="20"/>
+                  <line x1="18" y1="4" x2="18" y2="20"/>
+                  <path d="M3 8 Q12 6 21 8"/>
+                  <path d="M3 13 Q12 11 21 13"/>
+                  <path d="M3 18 Q12 16 21 18"/>
+                </svg>
+                <h5 data-i18n="processStep4Title">Flätning & bindning</h5>
+                <p data-i18n="processStep4Desc">Slanorna flätas mellan störparen och binds samman med vidja — tre per par.</p>
+              </li>
+              <li class="fence-process-step">
+                <span class="fence-process-num" aria-hidden="true">5</span>
+                <svg class="fence-process-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M8 12 L11 15 L16 9"/>
+                </svg>
+                <h5 data-i18n="processStep5Title">Efterbesiktning</h5>
+                <p data-i18n="processStep5Desc">Vi går igenom sträckning, spänning och bindningar och lämnar underhållsråd.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Gates -->
+        <div class="fence-gates reveal">
+          <div class="fence-gates-text">
+            <h3 class="fence-gates-title" data-i18n="gatesTitle">Grindar</h3>
+            <p data-i18n="gatesP">Till gärdsgården bygger vi enkel- eller dubbelgrind i samma hantverk och material som själva stängslet. Grindstolparna dimensioneras grövre än vanliga stör och förankras djupare för att bära tyngden utan att sätta sig över tid.</p>
+            <ul class="detail-list">
+              <li data-i18n="gatesLi1">Enkelgrind för gångtrafik</li>
+              <li data-i18n="gatesLi2">Dubbelgrind för traktor, häst eller maskin</li>
+              <li data-i18n="gatesLi3">Handsmidda gångjärn på förfrågan</li>
+            </ul>
+          </div>
+          <div class="fence-gates-images" data-gallery="gates">
+            <button class="gallery-item" data-index="0">
+              <img src="images/gate-01.jpg" alt="Dubbelgrind i klassisk stil" loading="lazy" width="800" height="600">
+            </button>
+            <button class="gallery-item" data-index="1">
+              <img src="images/gate-02.jpg" alt="Handbyggd dubbelgrind" loading="lazy" width="800" height="600">
+            </button>
+          </div>
+        </div>
+
+        <!-- Terrain & regional variants -->
+        <div class="fence-variants reveal">
+          <h3 class="fence-variants-title" data-i18n="variantsTitle">Terräng & regionala varianter</h3>
+          <div class="fence-variants-grid">
+            <div class="fence-variant">
+              <h4 data-i18n="variantsCol1Title">Kuperad terräng</h4>
+              <p data-i18n="variantsCol1Desc">På sluttande mark följer stören marklutningen och slanorna stegas i höjd mellan störparen. Branta partier förankras extra och bindningarna tätnas för att bära belastningen.</p>
+            </div>
+            <div class="fence-variant">
+              <img class="fence-variant-image" src="images/fence-05.jpg" alt="Klassisk Jämtgård med lutande störpar längs en lång grässträcka" loading="lazy" width="800" height="600">
+              <h4 data-i18n="variantsCol2Title">Regionala varianter</h4>
+              <p data-i18n="variantsCol2Desc">Jämtgården känns igen på sin höga profil, täta slana och lätt lutande störpar. Vi bygger i klassisk Jämtgård men kan anpassa höjd och täthet efter plats och önskemål.</p>
             </div>
           </div>
         </div>

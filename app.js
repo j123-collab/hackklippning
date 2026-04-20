@@ -37,6 +37,15 @@
       if (strings[key] != null) el.innerHTML = strings[key];
     });
 
+    // Update data-i18n-aria elements (aria-label attribute)
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (strings[key] != null) el.setAttribute('aria-label', strings[key]);
+    });
+
+    // Refresh the fence caption if the explainer is on the page
+    if (typeof updateFenceCaption === 'function') updateFenceCaption();
+
     // Update data-i18n-text elements (text node only, preserving child elements like SVGs)
     document.querySelectorAll('[data-i18n-text]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-text');
@@ -342,9 +351,25 @@
   var fenceParts = document.querySelectorAll('.fence-part');
   var fenceLabels = document.querySelectorAll('.fence-label');
   var fenceInfoCards = document.querySelectorAll('.fence-info-card');
+  var fenceCaption = document.getElementById('fenceCaption');
+  var activeFencePart = null;
+
+  function updateFenceCaption() {
+    if (!fenceCaption) return;
+    var strings = I18N[currentLang] || {};
+    if (!activeFencePart) {
+      fenceCaption.classList.remove('active');
+      fenceCaption.textContent = strings.fenceCaptionHint || '';
+      return;
+    }
+    var titleKey = 'explainer' + activeFencePart.charAt(0).toUpperCase() + activeFencePart.slice(1) + 'Title';
+    fenceCaption.classList.add('active');
+    fenceCaption.textContent = strings[titleKey] || activeFencePart;
+  }
 
   function activateFencePart(partName) {
     fenceSvg.classList.add('highlight');
+    activeFencePart = partName;
 
     fenceParts.forEach(function (p) {
       p.classList.toggle('active', p.dataset.part === partName);
@@ -357,6 +382,8 @@
     fenceInfoCards.forEach(function (c) {
       c.classList.toggle('active', c.dataset.part === partName);
     });
+
+    updateFenceCaption();
   }
 
   function resetFenceParts() {
@@ -366,6 +393,8 @@
     fenceInfoCards.forEach(function (c) { c.classList.remove('active'); });
     var defaultCard = document.querySelector('.fence-info-card[data-part="default"]');
     if (defaultCard) defaultCard.classList.add('active');
+    activeFencePart = null;
+    updateFenceCaption();
   }
 
   if (fenceSvg) {
@@ -377,9 +406,34 @@
       part.addEventListener('click', function () {
         activateFencePart(this.dataset.part);
       });
+
+      // Keyboard & focus support
+      part.addEventListener('focus', function () {
+        activateFencePart(this.dataset.part);
+      });
+
+      part.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateFencePart(this.dataset.part);
+        } else if (e.key === 'Escape') {
+          resetFenceParts();
+          this.blur();
+        }
+      });
     });
 
     fenceSvg.addEventListener('mouseleave', resetFenceParts);
+
+    // Reset when keyboard focus leaves the SVG entirely
+    fenceSvg.addEventListener('focusout', function (e) {
+      if (!fenceSvg.contains(e.relatedTarget)) {
+        resetFenceParts();
+      }
+    });
+
+    // Initialise caption
+    updateFenceCaption();
   }
 
   // ==================== BEFORE / AFTER SLIDER ====================
