@@ -6,99 +6,6 @@
 (function () {
   'use strict';
 
-  // ==================== LANGUAGE TOGGLE ====================
-  var currentLang = 'sv';
-
-  function setLanguage(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-
-    var strings = I18N[lang];
-    if (!strings) return;
-
-    // Update all data-i18n elements (textContent)
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n');
-      if (strings[key] != null) {
-        // For labels with <span class="required">, preserve the span
-        var req = el.querySelector('.required');
-        if (req) {
-          el.textContent = strings[key] + ' ';
-          el.appendChild(req);
-        } else {
-          el.textContent = strings[key];
-        }
-      }
-    });
-
-    // Update data-i18n-html elements (innerHTML)
-    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-html');
-      if (strings[key] != null) el.innerHTML = strings[key];
-    });
-
-    // Update data-i18n-aria elements (aria-label attribute)
-    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-aria');
-      if (strings[key] != null) el.setAttribute('aria-label', strings[key]);
-    });
-
-    // Refresh the fence caption if the explainer is on the page
-    if (typeof updateFenceCaption === 'function') updateFenceCaption();
-
-    // Update data-i18n-text elements (text node only, preserving child elements like SVGs)
-    document.querySelectorAll('[data-i18n-text]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-text');
-      if (strings[key] == null) return;
-      // Find the last text node (after the SVG)
-      var nodes = el.childNodes;
-      for (var i = nodes.length - 1; i >= 0; i--) {
-        if (nodes[i].nodeType === 3 && nodes[i].textContent.trim()) {
-          nodes[i].textContent = '\n            ' + strings[key] + '\n          ';
-          break;
-        }
-      }
-    });
-
-    // Update toggle buttons
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
-      var isActive = btn.dataset.lang === lang;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-checked', isActive);
-    });
-
-    // Update map region data
-    var regionMap = {
-      jamtland: 'mapJamtland',
-      uppsala: 'mapUppsala',
-      vastmanland: 'mapVastmanland',
-      stockholm: 'mapStockholm',
-      sodermanland: 'mapSodermanland',
-      ostergotland: 'mapOstergotland'
-    };
-    for (var region in regionMap) {
-      if (strings[regionMap[region]]) {
-        regionData[region].services = strings[regionMap[region]];
-      }
-    }
-
-    // Update form validation messages
-    document.querySelectorAll('.form-error').forEach(function (err) { err.remove(); });
-    document.querySelectorAll('.form-group').forEach(function (g) {
-      g.classList.remove('valid', 'invalid');
-    });
-  }
-
-  var langToggle = document.getElementById('langToggle');
-  if (langToggle) {
-    langToggle.addEventListener('click', function (e) {
-      var btn = e.target.closest('.lang-btn');
-      if (!btn || btn.classList.contains('active')) return;
-      setLanguage(btn.dataset.lang);
-    });
-  }
-
-  // regionData is referenced in setLanguage, define it early
   var regionData = {
     jamtland:     { name: 'Jämtlands län',       services: 'Gärdsgård (byggnation & renovering), Skogsröjning' },
     uppsala:      { name: 'Uppsala län',          services: 'Häckar, Buskar & Fruktträd, Gärdsgård' },
@@ -329,184 +236,6 @@
     });
   });
 
-  // ==================== SEASONAL GUIDE ====================
-  var seasonTabs = document.querySelectorAll('.season-tab');
-  var seasonPanels = document.querySelectorAll('.season-panel');
-
-  seasonTabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      var season = this.dataset.season;
-
-      seasonTabs.forEach(function (t) { t.classList.remove('active'); });
-      seasonPanels.forEach(function (p) { p.classList.remove('active'); });
-
-      this.classList.add('active');
-      var panel = document.querySelector('.season-panel[data-season="' + season + '"]');
-      if (panel) panel.classList.add('active');
-    });
-  });
-
-  // ==================== FENCE EXPLAINER ====================
-  var fenceSvg = document.querySelector('.fence-svg');
-  var fenceParts = document.querySelectorAll('.fence-part');
-  var fenceLabels = document.querySelectorAll('.fence-label');
-  var fenceInfoCards = document.querySelectorAll('.fence-info-card');
-  var fenceCaption = document.getElementById('fenceCaption');
-  var fenceOrder = ['stor', 'slana', 'vidja'];
-  var activeFencePart = null;
-
-  function updateFenceCaption() {
-    if (!fenceCaption) return;
-    var strings = I18N[currentLang] || {};
-    if (!activeFencePart) {
-      fenceCaption.classList.remove('active');
-      fenceCaption.textContent = strings.fenceCaptionHint || '';
-      return;
-    }
-    var idx = fenceOrder.indexOf(activeFencePart);
-    var titleKey = 'explainer' + activeFencePart.charAt(0).toUpperCase() + activeFencePart.slice(1) + 'Title';
-    var title = strings[titleKey] || activeFencePart;
-    fenceCaption.classList.add('active');
-    fenceCaption.textContent = (idx + 1) + ' / ' + fenceOrder.length + ' · ' + title;
-  }
-
-  function activateFencePart(partName) {
-    fenceSvg.classList.add('highlight');
-    activeFencePart = partName;
-
-    fenceParts.forEach(function (p) {
-      p.classList.toggle('active', p.dataset.part === partName);
-    });
-
-    fenceLabels.forEach(function (l) {
-      l.classList.toggle('active', l.dataset.part === partName);
-    });
-
-    fenceInfoCards.forEach(function (c) {
-      c.classList.toggle('active', c.dataset.part === partName);
-    });
-
-    updateFenceCaption();
-  }
-
-  function resetFenceParts() {
-    fenceSvg.classList.remove('highlight');
-    fenceParts.forEach(function (p) { p.classList.remove('active'); });
-    fenceLabels.forEach(function (l) { l.classList.remove('active'); });
-    fenceInfoCards.forEach(function (c) { c.classList.remove('active'); });
-    var defaultCard = document.querySelector('.fence-info-card[data-part="default"]');
-    if (defaultCard) defaultCard.classList.add('active');
-    activeFencePart = null;
-    updateFenceCaption();
-  }
-
-  if (fenceSvg) {
-    fenceParts.forEach(function (part) {
-      part.addEventListener('mouseenter', function () {
-        activateFencePart(this.dataset.part);
-      });
-
-      part.addEventListener('click', function () {
-        activateFencePart(this.dataset.part);
-      });
-
-      // Keyboard & focus support
-      part.addEventListener('focus', function () {
-        activateFencePart(this.dataset.part);
-      });
-
-      part.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          activateFencePart(this.dataset.part);
-        } else if (e.key === 'Escape') {
-          resetFenceParts();
-          this.blur();
-        }
-      });
-    });
-
-    fenceSvg.addEventListener('mouseleave', resetFenceParts);
-
-    // Reset when keyboard focus leaves the SVG entirely
-    fenceSvg.addEventListener('focusout', function (e) {
-      if (!fenceSvg.contains(e.relatedTarget)) {
-        resetFenceParts();
-      }
-    });
-
-    // Prev / next cycle through the parts
-    var fencePrevBtn = document.getElementById('fencePrev');
-    var fenceNextBtn = document.getElementById('fenceNext');
-
-    function cycleFencePart(delta) {
-      var currentIndex = activeFencePart ? fenceOrder.indexOf(activeFencePart) : (delta > 0 ? -1 : 0);
-      var newIndex = (currentIndex + delta + fenceOrder.length) % fenceOrder.length;
-      activateFencePart(fenceOrder[newIndex]);
-    }
-
-    if (fencePrevBtn) fencePrevBtn.addEventListener('click', function () { cycleFencePart(-1); });
-    if (fenceNextBtn) fenceNextBtn.addEventListener('click', function () { cycleFencePart(1); });
-
-    // Initialise caption
-    updateFenceCaption();
-  }
-
-  // ==================== BEFORE / AFTER SLIDER ====================
-  var baSlider = document.getElementById('baSlider');
-  var baHandle = document.getElementById('baHandle');
-
-  if (baSlider && baHandle) {
-    var isDragging = false;
-
-    function updateSlider(x) {
-      var rect = baSlider.getBoundingClientRect();
-      var pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
-
-      var beforeImg = baSlider.querySelector('.ba-image--before');
-      beforeImg.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-
-      baHandle.style.left = pct + '%';
-      baHandle.setAttribute('aria-valuenow', Math.round(pct));
-    }
-
-    baSlider.addEventListener('mousedown', function (e) {
-      isDragging = true;
-      updateSlider(e.clientX);
-      e.preventDefault();
-    });
-
-    baSlider.addEventListener('touchstart', function (e) {
-      isDragging = true;
-      updateSlider(e.touches[0].clientX);
-    }, { passive: true });
-
-    document.addEventListener('mousemove', function (e) {
-      if (isDragging) updateSlider(e.clientX);
-    });
-
-    document.addEventListener('touchmove', function (e) {
-      if (isDragging) updateSlider(e.touches[0].clientX);
-    }, { passive: true });
-
-    document.addEventListener('mouseup', function () { isDragging = false; });
-    document.addEventListener('touchend', function () { isDragging = false; });
-
-    // Keyboard support
-    baHandle.addEventListener('keydown', function (e) {
-      var current = parseInt(this.getAttribute('aria-valuenow'), 10);
-      var step = 2;
-      if (e.key === 'ArrowLeft') {
-        updateSlider(baSlider.getBoundingClientRect().left + (baSlider.offsetWidth * (current - step) / 100));
-        e.preventDefault();
-      }
-      if (e.key === 'ArrowRight') {
-        updateSlider(baSlider.getBoundingClientRect().left + (baSlider.offsetWidth * (current + step) / 100));
-        e.preventDefault();
-      }
-    });
-  }
-
   // ==================== INTERACTIVE MAP ====================
   var mapRegions = document.querySelectorAll('.map-region');
   var mapTooltip = document.getElementById('mapTooltip');
@@ -581,7 +310,7 @@
         group.classList.add('invalid');
         const error = document.createElement('span');
         error.className = 'form-error';
-        error.textContent = field.type === 'email' ? I18N[currentLang].formErrorEmail : I18N[currentLang].formErrorRequired;
+        error.textContent = field.type === 'email' ? 'Ange en giltig e-postadress' : 'Detta fält är obligatoriskt';
         group.appendChild(error);
       } else if (valid && field.value !== '') {
         group.classList.add('valid');
@@ -626,18 +355,35 @@
         return;
       }
 
-      // Collect form data
       var data = {};
       new FormData(form).forEach(function (value, key) {
         data[key] = value;
       });
 
-      // TODO: Replace with actual endpoint (e.g., Formspree)
-      console.log('Form submission data:', data);
+      var fieldLabels = {
+        fornamn: 'Förnamn',
+        efternamn: 'Efternamn',
+        telefon: 'Telefon',
+        epost: 'E-post',
+        adress: 'Adress',
+        postnummer: 'Postnummer',
+        ort: 'Ort',
+        tjanst: 'Tjänst',
+        meddelande: 'Meddelande'
+      };
+      var bodyLines = [];
+      Object.keys(fieldLabels).forEach(function (key) {
+        if (data[key]) bodyLines.push(fieldLabels[key] + ': ' + data[key]);
+      });
+      var subject = 'Förfrågan från hemsidan' + (data.fornamn || data.efternamn ? ' — ' + [data.fornamn, data.efternamn].filter(Boolean).join(' ') : '');
+      var recipients = 'lars.falk@maxilium.se,larsfalk@hackklippning.com';
+      var mailto = 'mailto:' + recipients +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(bodyLines.join('\n'));
+      window.location.href = mailto;
 
-      // Show success message
       formStatus.className = 'form-status success';
-      formStatus.textContent = I18N[currentLang].formSuccess;
+      formStatus.textContent = 'Vi öppnar din e-postklient så att du kan skicka förfrågan. Om inget händer, mejla oss direkt på lars.falk@maxilium.se.';
       form.reset();
 
       // Clear validation states
