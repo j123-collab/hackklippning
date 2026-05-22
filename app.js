@@ -20,6 +20,17 @@
   const navLinks = document.getElementById('navLinks');
   const hamburger = document.getElementById('navHamburger');
   const links = navLinks.querySelectorAll('.nav-link');
+  const navInner = nav.querySelector('.nav-inner');
+  const navRight = navInner.querySelector('.nav-right');
+  // The nav has backdrop-filter, which creates a containing block for fixed
+  // descendants — so the drawer can't escape the pill. Portal it to body.
+  function portalNavLinks(open) {
+    if (open && navLinks.parentNode !== document.body) {
+      document.body.appendChild(navLinks);
+    } else if (!open && navLinks.parentNode === document.body) {
+      navInner.insertBefore(navLinks, navRight);
+    }
+  }
 
   // Scroll state + hero parallax
   var hero = document.getElementById('hem');
@@ -43,6 +54,7 @@
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    portalNavLinks(isOpen);
   });
 
   function closeMenu() {
@@ -50,6 +62,7 @@
     hamburger.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    portalNavLinks(false);
   }
 
   links.forEach(function (link) {
