@@ -198,6 +198,99 @@
           </div>
         </div>
 
+        <!-- Gärdsgård Explainer -->
+        <div class="fence-explainer reveal">
+          <h3 class="fence-explainer-title">Så bygger vi en gärdsgård</h3>
+          <div class="fence-explainer-layout">
+            <svg class="fence-svg" viewBox="0 0 600 360" aria-label="Interaktiv illustration av gärdsgårdens delar: stör, slana och vidja">
+              <!-- Ground -->
+              <path d="M0 320 Q150 300 300 310 Q450 320 600 305" fill="none" stroke="#8b7355" stroke-width="2"/>
+              <rect x="0" y="310" width="600" height="50" fill="#e8dcc8" opacity="0.3"/>
+
+              <!-- Posts (Stör) — 5 posts set in ground -->
+              <g class="fence-part" data-part="stor" tabindex="0" role="button" aria-label="Stör — aktivera för att läsa mer">
+                <line x1="80" y1="60" x2="72" y2="320" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="180" y1="40" x2="172" y2="315" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="280" y1="35" x2="272" y2="312" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="380" y1="40" x2="372" y2="315" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+                <line x1="480" y1="55" x2="472" y2="318" stroke="#8b6914" stroke-width="8" stroke-linecap="round"/>
+              </g>
+
+              <!-- Rails (Slana) — diagonal, rising to the right like a Jämtgård -->
+              <g class="fence-part" data-part="slana" tabindex="0" role="button" aria-label="Slana — aktivera för att läsa mer">
+                <path d="M55 140 Q280 100 500 80" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M55 195 Q280 155 500 135" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M55 250 Q280 210 500 190" fill="none" stroke="#a0784c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M58 305 Q280 265 498 245" fill="none" stroke="#a0784c" stroke-width="4.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Bindings (Vidja) — ties at each post/rail intersection -->
+              <g class="fence-part" data-part="vidja" tabindex="0" role="button" aria-label="Vidja — aktivera för att läsa mer">
+                <ellipse cx="78" cy="137" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 78 137)"/>
+                <ellipse cx="77" cy="192" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 77 192)"/>
+                <ellipse cx="76" cy="247" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-5 76 247)"/>
+                <ellipse cx="178" cy="124" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 178 124)"/>
+                <ellipse cx="177" cy="179" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 177 179)"/>
+                <ellipse cx="176" cy="234" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 176 234)"/>
+                <ellipse cx="278" cy="110" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 278 110)"/>
+                <ellipse cx="277" cy="165" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 277 165)"/>
+                <ellipse cx="276" cy="220" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-2 276 220)"/>
+                <ellipse cx="378" cy="97" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 378 97)"/>
+                <ellipse cx="377" cy="152" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 377 152)"/>
+                <ellipse cx="376" cy="207" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-3 376 207)"/>
+                <ellipse cx="478" cy="83" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 478 83)"/>
+                <ellipse cx="477" cy="138" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 477 138)"/>
+                <ellipse cx="476" cy="193" rx="6" ry="10" fill="none" stroke="#5c3d2e" stroke-width="2" transform="rotate(-4 476 193)"/>
+              </g>
+
+              <!-- Labels (shown on hover/click) -->
+              <g class="fence-label fence-label--stor" data-part="stor">
+                <rect x="100" y="45" width="58" height="28" rx="4" fill="#2d5016"/>
+                <text x="129" y="64" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Stör</text>
+                <line x1="95" y1="59" x2="82" y2="70" stroke="#2d5016" stroke-width="2"/>
+              </g>
+              <g class="fence-label fence-label--slana" data-part="slana">
+                <rect x="320" y="135" width="68" height="28" rx="4" fill="#2d5016"/>
+                <text x="354" y="154" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Slana</text>
+                <line x1="315" y1="155" x2="300" y2="162" stroke="#2d5016" stroke-width="2"/>
+              </g>
+              <g class="fence-label fence-label--vidja" data-part="vidja">
+                <rect x="410" y="195" width="62" height="28" rx="4" fill="#2d5016"/>
+                <text x="441" y="214" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Vidja</text>
+                <line x1="405" y1="209" x2="383" y2="207" stroke="#2d5016" stroke-width="2"/>
+              </g>
+            </svg>
+
+            <div class="fence-explainer-info" aria-live="polite">
+              <div class="fence-info-card active" data-part="default">
+                <p>Peka på eller klicka på gärdsgårdens delar för att lära dig mer om det traditionella hantverket.</p>
+              </div>
+              <div class="fence-info-card" data-part="stor">
+                <h4>Stör</h4>
+                <p>De vertikala stolparna som sätts i marken. Tillverkade av senvuxen gran från Jämtlands skogar, 75–90 år gamla. Den höga kåd- och hartshalten ger naturligt skydd mot röta.</p>
+              </div>
+              <div class="fence-info-card" data-part="slana">
+                <h4>Slana</h4>
+                <p>De horisontella stängerna som läggs vågrätt och bygger upp gärdsgården. Klyvs ur samma kvalitativa senvuxna gran och flätas mellan störparen.</p>
+              </div>
+              <div class="fence-info-card" data-part="vidja">
+                <h4>Vidja</h4>
+                <p>Böjliga kvistar som binds runt stör och slana för att hålla ihop konstruktionen. Tre vidjor knyts generellt på varje störpar — ett handgrepp som kräver erfarenhet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fence-nav">
+            <button type="button" class="fence-nav-btn fence-nav-btn--prev" id="fencePrev" aria-label="Föregående del">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <p class="fence-caption" id="fenceCaption" aria-hidden="true">Välj en del för att läsa mer</p>
+            <button type="button" class="fence-nav-btn fence-nav-btn--next" id="fenceNext" aria-label="Nästa del">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
 

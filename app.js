@@ -236,6 +236,85 @@
     });
   });
 
+  // ==================== FENCE EXPLAINER ====================
+  var fenceSvg = document.querySelector('.fence-svg');
+  var fenceParts = document.querySelectorAll('.fence-part');
+  var fenceLabels = document.querySelectorAll('.fence-label');
+  var fenceInfoCards = document.querySelectorAll('.fence-info-card');
+  var fenceCaption = document.getElementById('fenceCaption');
+  var fenceOrder = ['stor', 'slana', 'vidja'];
+  var fencePartTitles = { stor: 'Stör', slana: 'Slana', vidja: 'Vidja' };
+  var activeFencePart = null;
+
+  function updateFenceCaption() {
+    if (!fenceCaption) return;
+    if (!activeFencePart) {
+      fenceCaption.classList.remove('active');
+      fenceCaption.textContent = 'Välj en del för att läsa mer';
+      return;
+    }
+    var idx = fenceOrder.indexOf(activeFencePart);
+    var title = fencePartTitles[activeFencePart] || activeFencePart;
+    fenceCaption.classList.add('active');
+    fenceCaption.textContent = (idx + 1) + ' / ' + fenceOrder.length + ' · ' + title;
+  }
+
+  function activateFencePart(partName) {
+    fenceSvg.classList.add('highlight');
+    activeFencePart = partName;
+    fenceParts.forEach(function (p) { p.classList.toggle('active', p.dataset.part === partName); });
+    fenceLabels.forEach(function (l) { l.classList.toggle('active', l.dataset.part === partName); });
+    fenceInfoCards.forEach(function (c) { c.classList.toggle('active', c.dataset.part === partName); });
+    updateFenceCaption();
+  }
+
+  function resetFenceParts() {
+    fenceSvg.classList.remove('highlight');
+    fenceParts.forEach(function (p) { p.classList.remove('active'); });
+    fenceLabels.forEach(function (l) { l.classList.remove('active'); });
+    fenceInfoCards.forEach(function (c) { c.classList.remove('active'); });
+    var defaultCard = document.querySelector('.fence-info-card[data-part="default"]');
+    if (defaultCard) defaultCard.classList.add('active');
+    activeFencePart = null;
+    updateFenceCaption();
+  }
+
+  if (fenceSvg) {
+    fenceParts.forEach(function (part) {
+      part.addEventListener('mouseenter', function () { activateFencePart(this.dataset.part); });
+      part.addEventListener('click', function () { activateFencePart(this.dataset.part); });
+      part.addEventListener('focus', function () { activateFencePart(this.dataset.part); });
+      part.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateFencePart(this.dataset.part);
+        } else if (e.key === 'Escape') {
+          resetFenceParts();
+          this.blur();
+        }
+      });
+    });
+
+    fenceSvg.addEventListener('mouseleave', resetFenceParts);
+    fenceSvg.addEventListener('focusout', function (e) {
+      if (!fenceSvg.contains(e.relatedTarget)) resetFenceParts();
+    });
+
+    var fencePrevBtn = document.getElementById('fencePrev');
+    var fenceNextBtn = document.getElementById('fenceNext');
+
+    function cycleFencePart(delta) {
+      var currentIndex = activeFencePart ? fenceOrder.indexOf(activeFencePart) : (delta > 0 ? -1 : 0);
+      var newIndex = (currentIndex + delta + fenceOrder.length) % fenceOrder.length;
+      activateFencePart(fenceOrder[newIndex]);
+    }
+
+    if (fencePrevBtn) fencePrevBtn.addEventListener('click', function () { cycleFencePart(-1); });
+    if (fenceNextBtn) fenceNextBtn.addEventListener('click', function () { cycleFencePart(1); });
+
+    updateFenceCaption();
+  }
+
   // ==================== INTERACTIVE MAP ====================
   var mapRegions = document.querySelectorAll('.map-region');
   var mapTooltip = document.getElementById('mapTooltip');
