@@ -269,24 +269,36 @@ ul {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile menu overlay */
+/* Mobile menu — side drawer */
 .nav-links.open {
   display: flex;
   flex-direction: column;
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(80vw, 320px);
   background: rgba(250, 253, 247, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  padding: 88px 24px 32px;
+  align-items: stretch;
+  gap: 4px;
   z-index: 100;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.18);
+  animation: nav-slide-in 0.25s ease-out;
+}
+
+@keyframes nav-slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .nav-links.open .nav-link {
-  font-size: 1.4rem;
-  padding: 14px 32px;
+  font-size: 1.2rem;
+  padding: 14px 20px;
+  text-align: left;
+  border-radius: var(--radius);
 }
 
 /* ==================== HERO ==================== */
