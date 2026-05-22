@@ -23,7 +23,6 @@
 
   // Scroll state + hero parallax
   var hero = document.getElementById('hem');
-  var heroOverlay = hero ? hero.querySelector('.hero-overlay') : null;
   var heroContent = hero ? hero.querySelector('.hero-content') : null;
 
   window.addEventListener('scroll', function () {
@@ -35,7 +34,6 @@
       var rate = scrollY * 0.4;
       hero.style.backgroundPositionY = 'calc(50% + ' + rate + 'px)';
       if (heroContent) heroContent.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
-      if (heroOverlay) heroOverlay.style.opacity = 0.55 + (scrollY / window.innerHeight) * 0.35;
     }
   }, { passive: true });
 

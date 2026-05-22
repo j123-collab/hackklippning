@@ -142,8 +142,9 @@ ul {
 .nav {
   position: fixed;
   top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 92%;
   max-width: 900px;
   height: var(--nav-height);
@@ -301,17 +302,6 @@ ul {
   color: #fff;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 46, 10, 0.55) 0%,
-    rgba(26, 46, 10, 0.7) 50%,
-    rgba(26, 46, 10, 0.8) 100%
-  );
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
@@ -319,6 +309,14 @@ ul {
   max-width: 700px;
 }
 
+
+.hero-maxilium {
+  display: block;
+  width: clamp(240px, 50vw, 460px);
+  height: auto;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
 
 .hero-subtitle {
   font-size: clamp(1rem, 3vw, 1.35rem);
